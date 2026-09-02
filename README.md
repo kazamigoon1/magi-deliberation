@@ -111,9 +111,15 @@ $env:PYTHONUTF8='1'
 python tests/skill_contract_test.py
 python tests/readme_contract_test.py
 python tests/license_contract_test.py
+python tests/protocol_behavior_contract_test.py
 python tests/m365_personal_agent_contract_test.py
 python <path-to-skill-creator>/scripts/quick_validate.py .
 ```
+
+## Automated validation
+
+GitHub Actions runs the four repository-local contract scripts on every push
+and pull request. It does not evaluate generated LLM output.
 
 ## Scope and limits
 
@@ -237,9 +243,15 @@ $env:PYTHONUTF8='1'
 python tests/skill_contract_test.py
 python tests/readme_contract_test.py
 python tests/license_contract_test.py
+python tests/protocol_behavior_contract_test.py
 python tests/m365_personal_agent_contract_test.py
 python <path-to-skill-creator>/scripts/quick_validate.py .
 ```
+
+## 자동 검증
+
+GitHub Actions는 모든 push와 pull request에서 저장소 내부의 네 가지 계약
+스크립트를 실행합니다. 생성된 LLM 출력은 평가하지 않습니다.
 
 ## 범위와 한계
 
@@ -364,9 +376,15 @@ $env:PYTHONUTF8='1'
 python tests/skill_contract_test.py
 python tests/readme_contract_test.py
 python tests/license_contract_test.py
+python tests/protocol_behavior_contract_test.py
 python tests/m365_personal_agent_contract_test.py
 python <path-to-skill-creator>/scripts/quick_validate.py .
 ```
+
+## 自動検証
+
+GitHub Actions は、push と pull request のたびにリポジトリ内の 4 つの契約
+スクリプトを実行します。生成された LLM 出力は評価しません。
 
 ## 範囲と制限
 

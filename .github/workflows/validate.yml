@@ -15,7 +15,10 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - run: python tests/skill_contract_test.py
-      - run: python tests/readme_contract_test.py
-      - run: python tests/license_contract_test.py
-      - run: python tests/m365_personal_agent_contract_test.py
+      - name: Run repository contract tests
+        run: |
+          python tests/skill_contract_test.py
+          python tests/readme_contract_test.py
+          python tests/license_contract_test.py
+          python tests/protocol_behavior_contract_test.py
+          python tests/m365_personal_agent_contract_test.py
