@@ -2,6 +2,9 @@ from pathlib import Path
 
 
 readme = (Path(__file__).parents[1] / "README.md").read_text(encoding="utf-8")
+workflow = (
+    Path(__file__).parents[1] / ".github" / "workflows" / "validate.yml"
+).read_text(encoding="utf-8")
 
 required = [
     "# MAGI Deliberation\n\n> English",
@@ -29,13 +32,25 @@ automation_headings = [
 assert all(heading in readme for heading in automation_headings)
 assert readme.index(automation_headings[0]) < readme.index(automation_headings[1]) < readme.index(automation_headings[2])
 
-validation_command = "python tests/protocol_behavior_contract_test.py"
+workflow_commands = [
+    line.strip()
+    for line in workflow.splitlines()
+    if line.strip().startswith("python tests/")
+]
 validation_blocks = [
     readme[readme.index("## Validate"):readme.index("## Automated validation")],
     readme[readme.index("## 검증"):readme.index("## 자동 검증")],
     readme[readme.index("## 検証"):readme.index("## 自動検証")],
 ]
-assert all(block.count(validation_command) == 1 for block in validation_blocks)
-assert readme.count(validation_command) == 3
+for block in validation_blocks:
+    readme_commands = [
+        line.strip()
+        for line in block.splitlines()
+        if line.strip().startswith("python tests/")
+    ]
+    assert readme_commands == workflow_commands, (
+        "README validation commands must exactly match workflow commands: "
+        f"expected {workflow_commands}, got {readme_commands}"
+    )
 
 print("PASS: README provides English, Korean, and Japanese sections in order")
