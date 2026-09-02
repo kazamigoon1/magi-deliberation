@@ -11,6 +11,8 @@ M365 = ROOT / "m365-copilot"
 MANIFEST = M365 / "declarativeAgent.json"
 AGENT_BUILDER = M365 / "agent-builder.md"
 GUIDE = M365 / "README.md"
+README = ROOT / "README.md"
+VALIDATION_COMMAND = "python tests/m365_personal_agent_contract_test.py"
 
 
 def read_manifest() -> dict[str, object]:
@@ -52,10 +54,16 @@ def test_setup_documentation_preserves_the_private_mobile_boundary() -> None:
         assert marker in text, f"Missing setup boundary: {marker}"
 
 
+def test_readme_lists_the_m365_contract_command_in_all_languages() -> None:
+    text = README.read_text(encoding="utf-8")
+    assert text.count(VALIDATION_COMMAND) == 3, "Expected the M365 command in all three README sections"
+
+
 def main() -> None:
     test_manifest_is_a_no_action_p1_magi_agent()
     test_agent_builder_source_matches_private_p1_contract()
     test_setup_documentation_preserves_the_private_mobile_boundary()
+    test_readme_lists_the_m365_contract_command_in_all_languages()
     print("m365 personal agent contract: PASS")
 
 

@@ -104,6 +104,7 @@ $env:PYTHONUTF8='1'
 python tests/skill_contract_test.py
 python tests/readme_contract_test.py
 python tests/license_contract_test.py
+python tests/m365_personal_agent_contract_test.py
 python <path-to-skill-creator>/scripts/quick_validate.py .
 ```
 
@@ -223,6 +224,7 @@ $env:PYTHONUTF8='1'
 python tests/skill_contract_test.py
 python tests/readme_contract_test.py
 python tests/license_contract_test.py
+python tests/m365_personal_agent_contract_test.py
 python <path-to-skill-creator>/scripts/quick_validate.py .
 ```
 
@@ -342,6 +344,7 @@ $env:PYTHONUTF8='1'
 python tests/skill_contract_test.py
 python tests/readme_contract_test.py
 python tests/license_contract_test.py
+python tests/m365_personal_agent_contract_test.py
 python <path-to-skill-creator>/scripts/quick_validate.py .
 ```
 
