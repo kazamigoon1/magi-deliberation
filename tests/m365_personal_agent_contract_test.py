@@ -10,6 +10,7 @@ ROOT = Path(__file__).resolve().parents[1]
 M365 = ROOT / "m365-copilot"
 MANIFEST = M365 / "declarativeAgent.json"
 AGENT_BUILDER = M365 / "agent-builder.md"
+GUIDE = M365 / "README.md"
 
 
 def read_manifest() -> dict[str, object]:
@@ -43,9 +44,18 @@ def test_agent_builder_source_matches_private_p1_contract() -> None:
     assert "MAGI Deliberation" in source
 
 
+def test_setup_documentation_preserves_the_private_mobile_boundary() -> None:
+    assert GUIDE.exists(), f"Missing setup guide: {GUIDE.relative_to(ROOT)}"
+    text = GUIDE.read_text(encoding="utf-8").lower()
+
+    for marker in ("private", "desktop", "mobile", "p1"):
+        assert marker in text, f"Missing setup boundary: {marker}"
+
+
 def main() -> None:
     test_manifest_is_a_no_action_p1_magi_agent()
     test_agent_builder_source_matches_private_p1_contract()
+    test_setup_documentation_preserves_the_private_mobile_boundary()
     print("m365 personal agent contract: PASS")
 
 

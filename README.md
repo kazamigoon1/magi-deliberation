@@ -80,6 +80,14 @@ directory:
 After updating an existing installation, use it in an environment where Codex
 reloads that skills directory.
 
+## Personal Microsoft 365 Copilot agent
+
+Use [m365-copilot/README.md](m365-copilot/README.md) to create the private,
+instruction-only MAGI agent in Microsoft 365 Copilot. It is authored on desktop
+and then verified in the mobile app with the owner's account. The first release
+uses P1 perspective review only and has no actions, connectors, or extra
+permissions.
+
 ## Example
 
 ```text
@@ -192,6 +200,13 @@ P1은 독립 에이전트 심의가 아닙니다. 실제 병렬 작업이 없었
 기존 설치본을 갱신했다면 Codex가 해당 스킬 디렉터리를 다시 읽는 환경에서
 사용합니다.
 
+## 개인용 Microsoft 365 Copilot 에이전트
+
+[m365-copilot/README.md](m365-copilot/README.md)의 절차에 따라 Microsoft 365
+Copilot에서 개인 전용·지침 기반 MAGI 에이전트를 만듭니다. 데스크톱에서 작성한 뒤
+같은 계정으로 모바일 앱에서 확인합니다. 1차 버전은 P1 관점 검토만 사용하며,
+액션·커넥터·추가 권한을 사용하지 않습니다.
+
 ## 예시
 
 ```text
@@ -303,6 +318,13 @@ C0 がすべて通過した場合にのみ `APPROVED` に移行します。
 
 既存のインストールを更新した場合は、Codex がそのスキルディレクトリを再読み込み
 する環境で利用します。
+
+## 個人用 Microsoft 365 Copilot エージェント
+
+[m365-copilot/README.md](m365-copilot/README.md) の手順に従い、Microsoft 365
+Copilot で個人専用・指示ベースの MAGI エージェントを作成します。デスクトップで
+作成した後、同じアカウントでモバイルアプリから確認します。第1版は P1 の観点
+レビューのみを使用し、アクション、コネクタ、追加権限は使用しません。
 
 ## 例
 
