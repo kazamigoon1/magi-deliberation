@@ -29,4 +29,13 @@ automation_headings = [
 assert all(heading in readme for heading in automation_headings)
 assert readme.index(automation_headings[0]) < readme.index(automation_headings[1]) < readme.index(automation_headings[2])
 
+validation_command = "python tests/protocol_behavior_contract_test.py"
+validation_blocks = [
+    readme[readme.index("## Validate"):readme.index("## Automated validation")],
+    readme[readme.index("## 검증"):readme.index("## 자동 검증")],
+    readme[readme.index("## 検証"):readme.index("## 自動検証")],
+]
+assert all(block.count(validation_command) == 1 for block in validation_blocks)
+assert readme.count(validation_command) == 3
+
 print("PASS: README provides English, Korean, and Japanese sections in order")
