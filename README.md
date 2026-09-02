@@ -122,3 +122,7 @@ README contract. The validator checks the skill package structure.
 - ChatGPT and Codex can differ in their available tools and agent execution
   model. Report the actual P1, P2, or P3 provenance rather than assuming a
   capability from the skill text.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
