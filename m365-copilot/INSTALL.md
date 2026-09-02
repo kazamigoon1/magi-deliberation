@@ -11,9 +11,10 @@ creator's private agent.
 
 ## Before you start
 
-1. Sign in with the Microsoft 365 work or school account that will own the
-   agent. Confirm that **Agents** and **New agent** appear in Microsoft 365
-   Copilot on desktop.
+1. Sign in with the Microsoft work or school account that will own the agent.
+   On desktop, open the **Microsoft Copilot app** (including Microsoft 365
+   Copilot where it is branded that way) and confirm that **Agents** and
+   **New agent** appear.
 2. If they do not appear, Agent Builder is unavailable for that account, tenant
    policy, license, or rollout state. Do not share another person's account.
 3. Open `agent-builder.md` in this folder. It is the canonical copy/paste
@@ -21,7 +22,7 @@ creator's private agent.
 
 ## Create a private MAGI agent
 
-1. In Microsoft 365 Copilot desktop, open **Agents** → **New agent** →
+1. In the Microsoft Copilot app on desktop, open **Agents** → **New agent** →
    **Skip to configure**.
 2. Copy the display name, description, instructions, and three starter prompts
    from `agent-builder.md`.
@@ -74,8 +75,9 @@ desktop workflow; mobile availability must be verified on the owner's account.
 
 ## 시작 전 확인
 
-1. 에이전트를 소유할 Microsoft 365 회사 또는 학교 계정으로 로그인합니다.
-   데스크톱 Microsoft 365 Copilot에 **에이전트**와 **새 에이전트**가 보여야 합니다.
+1. 에이전트를 소유할 Microsoft 회사 또는 학교 계정으로 로그인합니다. 데스크톱의
+   **Microsoft Copilot 앱**(Microsoft 365 Copilot으로 표시되는 환경 포함)에서
+   **에이전트**와 **새 에이전트**가 보여야 합니다.
 2. 메뉴가 보이지 않으면 해당 계정의 Agent Builder 사용 권한, 테넌트 정책,
    라이선스 또는 점진 배포 상태를 확인합니다. 다른 사람의 계정을 공유하지 않습니다.
 3. 이 폴더의 `agent-builder.md`를 엽니다. 이름, 설명, 지침, 시작 프롬프트의
@@ -83,7 +85,7 @@ desktop workflow; mobile availability must be verified on the owner's account.
 
 ## 개인 MAGI 에이전트 생성
 
-1. 데스크톱 Microsoft 365 Copilot에서 **에이전트** → **새 에이전트** →
+1. 데스크톱 Microsoft Copilot 앱에서 **에이전트** → **새 에이전트** →
    **구성으로 건너뛰기**를 선택합니다.
 2. `agent-builder.md`의 표시 이름, 설명, 지침, 시작 프롬프트 세 개를 복사합니다.
 3. 지식 원본, 커넥터, 외부 액션은 추가하지 않습니다. 웹 근거 답변이 필요할 때만
@@ -133,8 +135,9 @@ Microsoft 365 Copilot 모바일 앱에서 같은 계정으로 로그인한 뒤 *
 
 ## 事前確認
 
-1. エージェントを所有する Microsoft 365 の職場または学校アカウントでサインインし、
-   デスクトップ版 Microsoft 365 Copilot に **Agents** と **New agent** があることを確認します。
+1. エージェントを所有する Microsoft の職場または学校アカウントでサインインし、
+   デスクトップの **Microsoft Copilot アプリ**（Microsoft 365 Copilot と表示される
+   環境を含む）に **Agents** と **New agent** があることを確認します。
 2. 表示されない場合は、Agent Builder の利用可否、テナント ポリシー、ライセンス、
    または段階的展開の状態を確認します。他者のアカウントは共有しません。
 3. このフォルダーの `agent-builder.md` を開きます。名前、説明、指示、開始プロンプトの
@@ -142,7 +145,7 @@ Microsoft 365 Copilot 모바일 앱에서 같은 계정으로 로그인한 뒤 *
 
 ## 個人用 MAGI エージェントの作成
 
-1. デスクトップの Microsoft 365 Copilot で **Agents** → **New agent** →
+1. デスクトップの Microsoft Copilot アプリで **Agents** → **New agent** →
    **Skip to configure** を選びます。
 2. `agent-builder.md` から表示名、説明、指示、三つの開始プロンプトをコピーします。
 3. 知識ソース、コネクター、外部アクションは追加しません。Web 検索は Web 根拠の

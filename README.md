@@ -80,10 +80,13 @@ directory:
 After updating an existing installation, use it in an environment where Codex
 reloads that skills directory.
 
-## Personal Microsoft 365 Copilot agent
+## Personal Microsoft Copilot agent
 
 Use [m365-copilot/README.md](m365-copilot/README.md) to create the private,
-instruction-only MAGI agent in Microsoft 365 Copilot. It is authored on desktop
+instruction-only MAGI agent in the Microsoft Copilot app, including Microsoft
+365 Copilot where it is branded that way. On desktop, verify that **Agents**
+and **New agent** are visible before starting; availability depends on the
+account, license, tenant policy, and rollout state. It is authored on desktop
 and then verified in the mobile app with the owner's account. The first release
 uses P1 perspective review only and has no actions, connectors, or extra
 permissions.
@@ -205,12 +208,14 @@ P1은 독립 에이전트 심의가 아닙니다. 실제 병렬 작업이 없었
 기존 설치본을 갱신했다면 Codex가 해당 스킬 디렉터리를 다시 읽는 환경에서
 사용합니다.
 
-## 개인용 Microsoft 365 Copilot 에이전트
+## 개인용 Microsoft Copilot 에이전트
 
-[m365-copilot/README.md](m365-copilot/README.md)의 절차에 따라 Microsoft 365
-Copilot에서 개인 전용·지침 기반 MAGI 에이전트를 만듭니다. 데스크톱에서 작성한 뒤
-같은 계정으로 모바일 앱에서 확인합니다. 1차 버전은 P1 관점 검토만 사용하며,
-액션·커넥터·추가 권한을 사용하지 않습니다.
+[m365-copilot/README.md](m365-copilot/README.md)의 절차에 따라 Microsoft
+Copilot 앱(Microsoft 365 Copilot으로 표시되는 환경 포함)에서 개인 전용·지침 기반
+MAGI 에이전트를 만듭니다. 시작 전에 데스크톱에서 **에이전트**와 **새 에이전트**
+메뉴가 보이는지 확인합니다. 사용 가능 여부는 계정, 라이선스, 테넌트 정책, 점진 배포
+상태에 따라 달라집니다. 작성 후 같은 계정으로 모바일 앱에서 확인합니다. 1차 버전은
+P1 관점 검토만 사용하며, 액션·커넥터·추가 권한을 사용하지 않습니다.
 
 만든 사람의 조직 밖 사용자에게는 개인 에이전트를 공유하지 말고,
 [사용자별 설치 가이드](m365-copilot/INSTALL.md)를 제공하여 각자 자신의 테넌트에서
@@ -329,12 +334,15 @@ C0 がすべて通過した場合にのみ `APPROVED` に移行します。
 既存のインストールを更新した場合は、Codex がそのスキルディレクトリを再読み込み
 する環境で利用します。
 
-## 個人用 Microsoft 365 Copilot エージェント
+## 個人用 Microsoft Copilot エージェント
 
-[m365-copilot/README.md](m365-copilot/README.md) の手順に従い、Microsoft 365
-Copilot で個人専用・指示ベースの MAGI エージェントを作成します。デスクトップで
-作成した後、同じアカウントでモバイルアプリから確認します。第1版は P1 の観点
-レビューのみを使用し、アクション、コネクタ、追加権限は使用しません。
+[m365-copilot/README.md](m365-copilot/README.md) の手順に従い、Microsoft
+Copilot アプリ（Microsoft 365 Copilot と表示される環境を含む）で個人専用・指示
+ベースの MAGI エージェントを作成します。開始前にデスクトップで **Agents** と
+**New agent** が見えることを確認します。利用可否はアカウント、ライセンス、
+テナント ポリシー、段階的展開の状態に依存します。作成後、同じアカウントで
+モバイルアプリから確認します。第1版は P1 の観点レビューのみを使用し、
+アクション、コネクタ、追加権限は使用しません。
 
 作成者の組織外の利用者には個人エージェントを共有せず、
 [ユーザーごとのインストールガイド](m365-copilot/INSTALL.md)を配布して各自の

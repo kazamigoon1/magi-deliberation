@@ -20,9 +20,12 @@ locations and limitations at [Agent Builder in Microsoft 365 Copilot](https://le
 
 ## Create the private agent
 
-1. On desktop, open [Microsoft 365 Copilot](https://m365.cloud.microsoft/chat)
-   and sign in with the account that will own the agent.
-2. Open **Agents** and choose **New agent**.
+1. On desktop, open the [Microsoft Copilot app](https://m365.cloud.microsoft/chat)
+   and sign in with the work or school account that will own the agent. The
+   app can be branded as Microsoft 365 Copilot.
+2. Confirm **Agents** and **New agent** are visible, then choose **New agent**.
+   If either entry is absent, this Agent Builder route is not available for
+   that account's license, tenant policy, or rollout state.
 3. Select **Configure**.
 4. Copy the display name, description, instructions, and three starter prompts
    from [agent-builder.md](agent-builder.md) into their matching fields.

@@ -59,7 +59,17 @@ def test_external_install_guide_explains_per_tenant_installation() -> None:
     assert INSTALL_GUIDE.exists(), f"Missing installation guide: {INSTALL_GUIDE.relative_to(ROOT)}"
     text = INSTALL_GUIDE.read_text(encoding="utf-8")
 
-    for marker in ("own tenant", "Agent Builder", "P1", "Codex", "ChatGPT"):
+    for marker in (
+        "own tenant",
+        "Microsoft Copilot",
+        "Microsoft 365 Copilot",
+        "Agents",
+        "New agent",
+        "Agent Builder",
+        "P1",
+        "Codex",
+        "ChatGPT",
+    ):
         assert marker in text, f"Missing external-installation guidance: {marker}"
 
 
