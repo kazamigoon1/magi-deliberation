@@ -1,0 +1,4 @@
+interface:
+  display_name: "MAGI Deliberation"
+  short_description: "Mode-scaled deliberation with an adversarial audit"
+  default_prompt: "Use MAGI 2.1 to review this decision, show the independence grade, and have RITSUKO audit the provisional verdict."
