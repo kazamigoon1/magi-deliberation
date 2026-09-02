@@ -47,11 +47,11 @@ def test_agent_builder_source_matches_private_p1_contract() -> None:
     assert "MAGI Deliberation" in source
 
 
-def test_setup_documentation_preserves_the_private_mobile_boundary() -> None:
+def test_setup_documentation_preserves_the_private_mobile_and_org_catalog_boundaries() -> None:
     assert GUIDE.exists(), f"Missing setup guide: {GUIDE.relative_to(ROOT)}"
-    text = GUIDE.read_text(encoding="utf-8").lower()
+    text = GUIDE.read_text(encoding="utf-8")
 
-    for marker in ("private", "desktop", "mobile", "p1"):
+    for marker in ("개인 전용", "데스크톱", "모바일", "P1", "조직 카탈로그", "Copilot Studio"):
         assert marker in text, f"Missing setup boundary: {marker}"
 
 
@@ -81,7 +81,7 @@ def test_readme_lists_the_m365_contract_command_in_all_languages() -> None:
 def main() -> None:
     test_manifest_is_a_no_action_p1_magi_agent()
     test_agent_builder_source_matches_private_p1_contract()
-    test_setup_documentation_preserves_the_private_mobile_boundary()
+    test_setup_documentation_preserves_the_private_mobile_and_org_catalog_boundaries()
     test_external_install_guide_explains_per_tenant_installation()
     test_readme_lists_the_m365_contract_command_in_all_languages()
     print("m365 personal agent contract: PASS")
