@@ -21,4 +21,12 @@ korean = readme.index("# MAGI Deliberation — 한국어")
 japanese = readme.index("# MAGI Deliberation — 日本語")
 assert english < korean < japanese, "README must be English, Korean, then Japanese"
 
+automation_headings = [
+    "## Automated validation",
+    "## 자동 검증",
+    "## 自動検証",
+]
+assert all(heading in readme for heading in automation_headings)
+assert readme.index(automation_headings[0]) < readme.index(automation_headings[1]) < readme.index(automation_headings[2])
+
 print("PASS: README provides English, Korean, and Japanese sections in order")
