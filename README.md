@@ -88,6 +88,10 @@ and then verified in the mobile app with the owner's account. The first release
 uses P1 perspective review only and has no actions, connectors, or extra
 permissions.
 
+For users outside the creator's organization, use the
+[per-user installation guide](m365-copilot/INSTALL.md) instead of sharing the
+creator's private agent.
+
 ## Example
 
 ```text
@@ -208,6 +212,10 @@ Copilot에서 개인 전용·지침 기반 MAGI 에이전트를 만듭니다. �
 같은 계정으로 모바일 앱에서 확인합니다. 1차 버전은 P1 관점 검토만 사용하며,
 액션·커넥터·추가 권한을 사용하지 않습니다.
 
+만든 사람의 조직 밖 사용자에게는 개인 에이전트를 공유하지 말고,
+[사용자별 설치 가이드](m365-copilot/INSTALL.md)를 제공하여 각자 자신의 테넌트에서
+생성하도록 안내합니다.
+
 ## 예시
 
 ```text
@@ -327,6 +335,10 @@ C0 がすべて通過した場合にのみ `APPROVED` に移行します。
 Copilot で個人専用・指示ベースの MAGI エージェントを作成します。デスクトップで
 作成した後、同じアカウントでモバイルアプリから確認します。第1版は P1 の観点
 レビューのみを使用し、アクション、コネクタ、追加権限は使用しません。
+
+作成者の組織外の利用者には個人エージェントを共有せず、
+[ユーザーごとのインストールガイド](m365-copilot/INSTALL.md)を配布して各自の
+テナントで作成するよう案内します。
 
 ## 例
 

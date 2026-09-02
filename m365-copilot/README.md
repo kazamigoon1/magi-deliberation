@@ -5,6 +5,10 @@ MAGI Deliberation. It is an instruction-only declarative agent: it supports
 decision review but has no actions, API plugins, connectors, or additional app
 permissions.
 
+For distribution outside the creator's organization, give each user
+[INSTALL.md](INSTALL.md) and `agent-builder.md` so they can create the agent
+in their own tenant.
+
 ## Requirements
 
 - An account for which Microsoft 365 Copilot and Agent Builder are available.
