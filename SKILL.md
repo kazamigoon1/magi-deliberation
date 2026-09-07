@@ -19,6 +19,39 @@ Apply these principles in order:
 
 Never treat a majority vote as decisive. Never allow a score to compensate for a hard constraint. Never present assumptions or inferences as facts.
 
+When the user is testing or improving MAGI, keep the example decision a test
+case. Findings do not authorize implementing the example project. Preserve
+the user's actual objective through follow-up turns.
+
+## Claim and verdict integrity
+
+In Standard and Full, assign stable IDs to decision-critical claims:
+`M-01`, `B-01`, `C-01`; use `R-01` for audit attacks and `E-01` for evidence.
+Keep the original author immutable. Track each claim's source, scope, status
+(`supported`, `unverified`, `refuted`, or `withdrawn`) and dependent verdict.
+A different node citing a claim does not become its author. In Quick, use
+explicit node names and source references without requiring a ledger.
+
+Record verdict changes separately: node, previous verdict, new verdict,
+triggering claim/evidence, and remaining conditions. Produce the final panel
+from the latest recorded verdicts; never reconstruct it from narrative memory.
+Before output, check attribution, current verdicts, and whether every decisive
+claim is still supported within the same scope.
+
+When decisive evidence is refuted or withdrawn, invalidate conclusions that
+depend on it and rerun the decision engine. A conclusion may survive only with
+an explicit replacement justification that independently meets the evidence
+gate. Existing implementation is evidence of switching cost, not proof of
+superior safety or a reason to preserve a verdict automatically.
+
+Unanimity and absence of a minority view are valid outcomes. Check shared
+premises and evidence coverage; never force dissent, change a vote for drama,
+or downgrade quality solely because the nodes agree. An unsuccessful audit
+means no defect was established within its tested scope, not proof of truth.
+
+For skill maintenance, use [behavioral regression cases](references/integrity-cases.md)
+to test these failure modes. These are synthetic cases, not real-world facts.
+
 ## Select the execution mode
 
 Mode changes the work performed as well as the visible detail. Do not run a
@@ -246,8 +279,10 @@ Prefer delay when inexpensive forthcoming information has high decision value an
 Choose and disclose the applicable provenance grade before evaluating the
 nodes. For P3, give each agent the common packet only. For P2, write each
 review before reading the previous conclusion. For P1, simulate the three
-perspectives sequentially and label the result as a perspective review. Do not
-reveal another node's verdict until all three initial evaluations are complete.
+perspectives sequentially and label the result as a perspective review. In
+P2/P3, withhold other node verdicts until initial evaluations are complete.
+In P1, completing each perspective before synthesis is presentation order,
+not information isolation; a shared context cannot forget earlier conclusions.
 
 Each node returns:
 
@@ -302,13 +337,20 @@ Answer:
 
 ## Phase 7 — Cross-examination
 
-Only after independent evaluations, reveal the verdicts. Each node must:
+After initial evaluations, compare the verdicts. Each node must:
 
-1. **Attack** the weakest material claim made by another node.
-2. **Steelman** the strongest opposing claim in its best defensible form.
+1. **Test** the weakest material claim made by another node. Submit an attack
+   only when a defensible objection exists; otherwise record no material defect.
+2. **Steelman** the strongest opposing claim when one exists. If none exists,
+   test a shared premise without inventing an opposing vote.
 3. State whether the challenge changes its verdict, confidence, or required conditions.
 
 The goal is error detection, not forced agreement. Preserve unresolved disagreement.
+
+Before the audit, apply Phase 9's priority order to the current evidence to
+form a provisional verdict and list its decisive claim IDs. Phase 9 then
+re-evaluates that verdict after the audit; Phase 10 tests its robustness.
+Do not assign a robustness rating before those tests have been performed.
 
 ## Phase 8 — RITSUKO adversarial audit
 
@@ -316,6 +358,11 @@ RITSUKO has no vote and attacks the provisional decision, not a node or person.
 Use two passes: first provide only the decision packet and provisional verdict;
 then provide public node and cross-examination summaries so it can discard
 attacks already resolved. Never expose private scratch work.
+
+That withholding requires an actually isolated auditor context. In P1,
+re-examine the packet and provisional verdict first, then check prior public
+summaries for resolved objections, but label the audit non-isolated. Earlier
+content remains visible; never claim a fresh or blind auditor in that mode.
 
 RITSUKO may submit at most one fatal attack in Quick mode and two material
 attacks in Standard or Full mode. Each attack must target one concrete verdict
@@ -351,6 +398,16 @@ Dismiss a concern that cannot meet this contract; do not manufacture
 opposition. If verification needs a new fact, mark `[VERIFY]`, obtain it when
 material, and record if RITSUKO was wrong.
 
+Apply the same evidence standard to RITSUKO as to the nodes. Separate an
+attack's plausible mechanism from proof that its falsification condition is
+true. Record `confirmed`, `unverified`, or `refuted`, the evidence IDs, and
+which dependent claims are affected. An unverified attack cannot establish
+that MAGI is wrong; if it identifies a material evidence gap, it may instead
+justify a pending state with a named verification task. A confirmed attack
+changes only the claims within its demonstrated scope. For example, matching
+identity fields do not prove that all audit events are indistinguishable or
+that every related credential is irrevocable.
+
 In Full mode, run a pre-mortem with at least three credible failure stories and
 identify whether safeguards address them. In Standard mode, run one worst-case
 check only when it could change the state. Quick mode skips the pre-mortem. A
@@ -361,7 +418,7 @@ RITSUKO must explicitly ask:
 
 > What unverified real-world condition could most easily reverse the current conclusion?
 
-If RITSUKO finds a material context gap or scope transfer error, invalidate the provisional robustness rating and return the decision to the earliest affected phase. Allow one return only; a second return ends as `PENDING`.
+If RITSUKO finds a material context gap or scope transfer error, invalidate any existing robustness rating and return the decision to the earliest affected phase. Allow one return only; unresolved uncertainty requiring a second return ends with the applicable `PENDING-DATA`, `PENDING-CONDITION`, `PENDING-TIME`, or `PENDING-CONFLICT` state and its resolver, never a generic `PENDING` final state. This limit never overrides a confirmed C0 violation or unacceptable catastrophic risk: return `ABORTED` for the affected action under Phase 2.
 
 ## Phase 9 — Decision engine
 
@@ -383,7 +440,7 @@ Resolve the decision in this strict priority order:
 - **Conditionally sufficient**: Some Q2 evidence remains, but the action is low-cost, bounded, observable, and reversible.
 - **Insufficient**: A decision-critical claim relies on Q0–Q1 evidence while cost, safety exposure, or irreversibility is material. Return `PENDING-DATA` unless a hard constraint requires rejection or abort.
 
-When expected outcomes are similar, select the more reversible option. State the decisive argument and preserve the strongest unresolved opposing argument as the **Surviving Minority View**.
+When expected outcomes are similar, select the more reversible option. State the decisive argument and preserve the strongest unresolved opposing argument as the **Surviving Minority View**. If none remains, state `none`; do not invent one.
 
 ## Phase 10 — Robustness battery
 
@@ -460,7 +517,7 @@ Material Assumption:
 MELCHIOR: [one line]
 BALTHASAR: [one line]
 CASPER: [one line]
-RITSUKO: [one fatal attack — DISMISSED or material]
+RITSUKO: [at most one fatal attack — DISMISSED / material / no substantiated defect]
 Final State:
 Decisive Reason:
 Condition / Falsification:
@@ -594,6 +651,15 @@ Owner / Action / Trigger or Deadline:
 ```
 
 Keep visible output proportional to stakes. Do not bury the final state or next action beneath analysis. Cite external evidence near the claim it supports.
+
+Default to a compact verdict, node summary, decisive evidence, audit outcome,
+surviving uncertainty, and next action. When a longer record is useful, save
+a public decision record and link it, or use a collapsible section if file
+output is unavailable. Include evidence, claim IDs, verdict changes, and
+verification outcomes; never expose private scratch work or fabricate a
+verbatim internal debate. State separately what was inspected, actually
+executed, and left untested. Never claim an independent run without actual
+isolated execution and its provenance.
 
 ## Post-decision learning
 
