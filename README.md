@@ -82,6 +82,9 @@ reloads that skills directory.
 
 ## Personal Microsoft Copilot agent
 
+For tenant administrators and internal rollout owners, see the
+[organization deployment guide (Korean)](m365-copilot/ORG-DEPLOYMENT.md).
+
 Use [m365-copilot/README.md](m365-copilot/README.md) to create the private,
 instruction-only MAGI agent in the Microsoft Copilot app, including Microsoft
 365 Copilot where it is branded that way. On desktop, verify that **Agents**
@@ -216,6 +219,9 @@ P1은 독립 에이전트 심의가 아닙니다. 실제 병렬 작업이 없었
 
 ## 개인용 Microsoft Copilot 에이전트
 
+조직 배포 담당자는 [조직 배포 가이드](m365-copilot/ORG-DEPLOYMENT.md)에서
+관리자 승인, 대상 지정, 인수 시험, 업데이트·회수 절차를 확인할 수 있습니다.
+
 [m365-copilot/README.md](m365-copilot/README.md)의 절차에 따라 Microsoft
 Copilot 앱(Microsoft 365 Copilot으로 표시되는 환경 포함)에서 개인 전용·지침 기반
 MAGI 에이전트를 만듭니다. 시작 전에 데스크톱에서 **에이전트**와 **새 에이전트**
@@ -347,6 +353,8 @@ C0 がすべて通過した場合にのみ `APPROVED` に移行します。
 する環境で利用します。
 
 ## 個人用 Microsoft Copilot エージェント
+
+組織の展開担当者向けに[組織展開ガイド（韓国語）](m365-copilot/ORG-DEPLOYMENT.md)を用意しています。
 
 [m365-copilot/README.md](m365-copilot/README.md) の手順に従い、Microsoft
 Copilot アプリ（Microsoft 365 Copilot と表示される環境を含む）で個人専用・指示
