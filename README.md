@@ -65,6 +65,16 @@ time, and operator condition. Recheck calendar conflicts, weather, site access,
 compatibility, tools, and consumables shortly before work. Transition to
 `APPROVED` only when day-of C0 checks pass.
 
+## Token-saver integration
+
+MAGI narrows source reads, filters tool output, shares a compact evidence packet,
+and records changes by claim ID. Quick loads only `SKILL.md`; Standard and Full
+also load `references/core-protocol.md`. Maintenance, detailed Full output, and
+postmortem guidance load only when applicable. The `token-saver:token-saver`
+plugin can assist broad file/log exploration; it is not an installation
+dependency. Evidence standards, C0 checks, and independence labels still apply.
+Loading-size reductions are not measured runtime token or billing savings.
+
 ## Install in Codex
 
 Place this repository as `magi-deliberation` under the Codex personal skills
@@ -74,6 +84,7 @@ directory:
 <CODEX_HOME>/skills/magi-deliberation/
 ├── SKILL.md
 ├── agents/openai.yaml
+├── references/
 └── tests/
 ```
 
@@ -115,13 +126,14 @@ python tests/skill_contract_test.py
 python tests/readme_contract_test.py
 python tests/license_contract_test.py
 python tests/protocol_behavior_contract_test.py
+python tests/context_loading_contract_test.py
 python tests/m365_personal_agent_contract_test.py
 python <path-to-skill-creator>/scripts/quick_validate.py .
 ```
 
 ## Automated validation
 
-GitHub Actions runs the four repository-local contract scripts on every push
+GitHub Actions runs the repository-local contract scripts on every push
 and pull request. It does not evaluate generated LLM output.
 
 ## Scope and limits
@@ -203,6 +215,16 @@ P1은 독립 에이전트 심의가 아닙니다. 실제 병렬 작업이 없었
 날씨, 장소 접근성, 호환성, 공구와 소모품을 다시 확인하고, 당일 C0가 모두
 통과할 때만 `APPROVED`로 전환합니다.
 
+## Token-saver 연동
+
+자료는 검색으로 범위를 좁힌 뒤 읽고, 명령 출력은 도구 안에서 집계합니다.
+공통 근거 패킷을 공유하고 이후 변경은 주장 ID로 기록합니다. Quick은
+`SKILL.md`만 읽고, Standard와 Full은 `references/core-protocol.md`도 읽습니다.
+정비·긴 Full 서식·사후 평가는 해당할 때만 추가로 읽습니다. 설치된
+`token-saver:token-saver`는 큰 파일과 로그 탐색에 활용할 수 있으며 필수
+의존성은 아닙니다. 근거 기준, C0 검사, 독립성 표시는 유지합니다.
+파일 분량 감소는 실제 실행 토큰이나 요금의 절감률을 뜻하지 않습니다.
+
 ## Codex 설치
 
 이 저장소를 Codex 개인 스킬 디렉터리 아래 `magi-deliberation`으로 둡니다.
@@ -211,6 +233,7 @@ P1은 독립 에이전트 심의가 아닙니다. 실제 병렬 작업이 없었
 <CODEX_HOME>/skills/magi-deliberation/
 ├── SKILL.md
 ├── agents/openai.yaml
+├── references/
 └── tests/
 ```
 
@@ -250,6 +273,7 @@ python tests/skill_contract_test.py
 python tests/readme_contract_test.py
 python tests/license_contract_test.py
 python tests/protocol_behavior_contract_test.py
+python tests/context_loading_contract_test.py
 python tests/m365_personal_agent_contract_test.py
 python <path-to-skill-creator>/scripts/quick_validate.py .
 ```
@@ -337,6 +361,16 @@ P3 と表記しません。
 予定の競合、天気、場所へのアクセス、適合性、工具、消耗品を再確認し、当日の
 C0 がすべて通過した場合にのみ `APPROVED` に移行します。
 
+## Token-saver 連携
+
+検索で範囲を絞り、ツール内で出力を集計し、共通の根拠パケットを共有します。
+変更は主張 ID ごとに記録します。Quick は `SKILL.md` のみ、Standard と
+Full は `references/core-protocol.md` も読みます。整備、詳細な Full 出力、
+事後評価の資料は該当する場合だけ読みます。利用可能な
+`token-saver:token-saver` は大きなファイルやログの探索に使えますが、
+必須依存ではありません。根拠基準、C0、独立性の表示は維持します。
+ファイル量の減少は実行トークンや料金の削減率を示すものではありません。
+
 ## Codex へのインストール
 
 このリポジトリを Codex の個人スキルディレクトリ配下に
@@ -346,6 +380,7 @@ C0 がすべて通過した場合にのみ `APPROVED` に移行します。
 <CODEX_HOME>/skills/magi-deliberation/
 ├── SKILL.md
 ├── agents/openai.yaml
+├── references/
 └── tests/
 ```
 
@@ -385,6 +420,7 @@ python tests/skill_contract_test.py
 python tests/readme_contract_test.py
 python tests/license_contract_test.py
 python tests/protocol_behavior_contract_test.py
+python tests/context_loading_contract_test.py
 python tests/m365_personal_agent_contract_test.py
 python <path-to-skill-creator>/scripts/quick_validate.py .
 ```

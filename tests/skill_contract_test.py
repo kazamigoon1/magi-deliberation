@@ -1,7 +1,7 @@
 from pathlib import Path
 
 
-skill = (Path(__file__).parents[1] / "SKILL.md").read_text(encoding="utf-8")
+skill = (Path(__file__).parents[1] / "references/maintenance.md").read_text(encoding="utf-8")
 
 required = [
     "## MAGI-MAINT — vehicle and appliance maintenance profile",

@@ -21,4 +21,5 @@ jobs:
           python tests/readme_contract_test.py
           python tests/license_contract_test.py
           python tests/protocol_behavior_contract_test.py
+          python tests/context_loading_contract_test.py
           python tests/m365_personal_agent_contract_test.py

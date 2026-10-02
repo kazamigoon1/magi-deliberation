@@ -1,15 +1,18 @@
 from pathlib import Path
 
 
-skill = (Path(__file__).parents[1] / "SKILL.md").read_text(encoding="utf-8")
+root = Path(__file__).parents[1]
+skill = (root / "SKILL.md").read_text(encoding="utf-8")
+core = (root / "references/core-protocol.md").read_text(encoding="utf-8")
+maintenance = (root / "references/maintenance.md").read_text(encoding="utf-8")
 
 
 def section_between(start_heading: str, end_heading: str, invariant_name: str) -> str:
-    start = skill.find(start_heading)
-    end = skill.find(end_heading, start)
+    start = core.find(start_heading)
+    end = core.find(end_heading, start)
     assert start != -1, f"Missing {invariant_name} section start: {start_heading}"
     assert end != -1, f"Missing {invariant_name} section end: {end_heading}"
-    return skill[start:end]
+    return core[start:end]
 
 
 invariants = {
@@ -59,11 +62,6 @@ assert not missing_attack_limits, (
 )
 print("PASS: RITSUKO attack limits")
 
-maintenance = section_between(
-    "## MAGI-MAINT — vehicle and appliance maintenance profile",
-    "## Independence provenance",
-    "maintenance approval transition",
-)
 schedule_selection = "**Schedule selection**"
 pre_execution_recheck = "**Pre-execution recheck**"
 day_of_go_no_go = "**Day-of go/no-go**"
